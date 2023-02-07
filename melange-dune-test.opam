@@ -1,0 +1,26 @@
+opam-version: "2.0"
+synopsis: "melange-dune-test"
+maintainer: ["torben@ewert-online.com"]
+authors: ["Torben Ewert"]
+license: "MIT"
+homepage: "https://github.com/ewert-online/melange-dune-test"
+bug-reports: "https://github.com/ewert-online/melange-dune-test/issues"
+depends: [
+  "ocaml"
+  "dune" {>= "3.7"}
+  "mel"
+  "melange"
+  "meldep"
+  "ppx_deriving"
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs "@install"]
+]
+dev-repo: "git+https://github.com/melange-dune-test/melange-dune-test.git"
+pin-depends: [
+  [ "dune.dev" "git+https://github.com/ocaml/dune#c8f392fe9f9a2374a15979220e2f15c0ba32cfbf" ]
+  [ "mel.dev" "git+https://github.com/melange-re/melange#85783b5f53be8f34e57bbe9f869d1c2b0ac04c82" ]
+  [ "melange.dev" "git+https://github.com/melange-re/melange#85783b5f53be8f34e57bbe9f869d1c2b0ac04c82" ]
+  [ "meldep.dev" "git+https://github.com/melange-re/melange#85783b5f53be8f34e57bbe9f869d1c2b0ac04c82" ]
+]
