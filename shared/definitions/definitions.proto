@@ -1,0 +1,4 @@
+message Test {
+  required string id = 1;
+  required string label = 2;
+}

@@ -1,5 +1,4 @@
 (library
  (name shared)
- (modes melange)
- (preprocess
-  (pps ppx_deriving.make)))
+ (modes native melange)
+ (libraries definitions))

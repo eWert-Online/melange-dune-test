@@ -1,0 +1,74 @@
+opam-version: "2.0"
+name: "melange-dune-test"
+version: "~dev"
+synopsis: "melange-dune-test"
+maintainer: "torben@ewert-online.com"
+authors: "Torben Ewert"
+license: "MIT"
+homepage: "https://github.com/ewert-online/melange-dune-test"
+bug-reports: "https://github.com/ewert-online/melange-dune-test/issues"
+depends: [
+  "base-bigarray" {= "base"}
+  "base-bytes" {= "base" & dev}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "base64" {= "3.5.1" & dev}
+  "chrome-trace" {= "3.7.1" & dev}
+  "cmdliner" {= "1.2.0" & dev}
+  "cppo" {= "1.6.9"}
+  "csexp" {= "1.5.1" & dev}
+  "dot-merlin-reader" {= "4.5" & dev}
+  "dune" {= "dev" & dev}
+  "dune-build-info" {= "3.7.1" & dev}
+  "dune-rpc" {= "3.6.2" & dev}
+  "dyn" {= "3.6.2" & dev}
+  "fiber" {= "3.6.2" & dev}
+  "fix" {= "20220121"}
+  "melange" {= "dev" & dev}
+  "melange-compiler-libs" {= "dev" & dev}
+  "menhir" {= "20220210"}
+  "menhirLib" {= "20220210"}
+  "menhirSdk" {= "20220210"}
+  "merlin-extend" {= "0.6.1"}
+  "ocaml" {= "4.14.1"}
+  "ocaml-base-compiler" {= "4.14.1"}
+  "ocaml-compiler-libs" {= "v0.12.4" & dev}
+  "ocaml-config" {= "2"}
+  "ocaml-lsp-server" {= "1.15.1-4.14" & dev}
+  "ocaml-options-vanilla" {= "1"}
+  "ocaml-protoc" {= "2.4"}
+  "ocamlbuild" {= "0.14.2" & dev}
+  "ocamlc-loc" {= "3.6.2" & dev}
+  "ocamlfind" {= "1.9.6"}
+  "ocamlformat-rpc-lib" {= "0.25.1" & dev}
+  "octavius" {= "1.2.2" & dev}
+  "omd" {= "1.3.2" & dev}
+  "ordering" {= "3.6.2" & dev}
+  "pbrt" {= "2.4"}
+  "pp" {= "1.1.2" & dev}
+  "ppx_derivers" {= "1.2.1"}
+  "ppx_yojson_conv_lib" {= "v0.15.0" & dev}
+  "ppxlib" {= "0.29.1" & dev}
+  "re" {= "1.10.4" & dev}
+  "reactjs-jsx-ppx" {= "dev" & dev}
+  "reason" {= "3.8.2"}
+  "result" {= "1.5"}
+  "seq" {= "base" & dev}
+  "sexplib0" {= "v0.15.1" & dev}
+  "spawn" {= "v0.15.1" & dev}
+  "stdlib-shims" {= "0.3.0"}
+  "stdune" {= "3.6.2" & dev}
+  "topkg" {= "1.0.7" & dev}
+  "uutf" {= "1.0.3" & dev}
+  "xdg" {= "3.7.1" & dev}
+  "yojson" {= "2.0.2" & dev}
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs "@install"]
+]
+dev-repo: "git+https://github.com/melange-dune-test/melange-dune-test.git"
+pin-depends: [
+  "dune.dev"
+  "git+https://github.com/ocaml/dune.git#66573762f28b84268cf04c3c46d0deaef9945316"
+]

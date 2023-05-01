@@ -1,0 +1,17 @@
+(rule
+ (targets
+  definitions_pb.ml
+  definitions_pb.mli
+  definitions_types.ml
+  definitions_types.mli)
+ (deps definitions.proto)
+ (action
+  (progn
+   (run ocaml-protoc -binary -ml_out ./ %{deps}))))
+
+(library
+ (name definitions)
+ (modes native melange)
+ (libraries pbrt)
+ (flags
+  (:standard -w -30)))

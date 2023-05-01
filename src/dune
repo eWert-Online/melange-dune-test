@@ -1,6 +1,5 @@
 (melange.emit
  (target es6)
  (alias melange)
- (entries app)
  (libraries shared)
- (module_system es6))
+ (module_systems es6))

@@ -1,3 +1,9 @@
-let data = Shared.make_data ~id:1 ~label:"foo" () in
+open Shared.Definitions.Types
 
-print_endline(data.Shared.label);
+let main () = 
+  let data = default_test () in
+
+  print_endline(data.label);
+;;
+
+main ()
